@@ -7,7 +7,8 @@
 
   outputs = { self, nixpkgs }:
     let
-      inherit (nixpkgs.stdenv.hostPlatform) isDarwin;
+      pkgs = import nixpkgs {};
+      inherit (pkgs.stdenv.hostPlatform) isDarwin;
     in {
       lib = {
         homeDir = if isDarwin then "/Users" else "/home";
