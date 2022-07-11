@@ -11,7 +11,7 @@
       inherit (pkgs.stdenv.hostPlatform) isDarwin;
     in {
       lib = {
-        homeDir = if isDarwin then "/Users" else "/home";
+        homeDirectory = if isDarwin then "/Users" else "/home";
       };
     };
 }
